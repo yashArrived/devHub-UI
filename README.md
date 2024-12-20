@@ -26,4 +26,6 @@
 - Add a constants file
 - Navigate to feed after login
 - Login , and security check to other routes
-
+- Logout Feature
+- Get feed and feed in store
+- Built user card
