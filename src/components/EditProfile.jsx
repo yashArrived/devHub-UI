@@ -58,11 +58,11 @@ const EditProfile = ({user}) => {
         <p className=' flex font-bold align-middle items-center justify-center mb-5 text-xl'>Edit Profile</p>
         <label className="form-control">
           <div className="label">
-            <span className="label-text ">First Name</span>
+            <span className="label-text text-lg">First Name</span>
           </div>
           <input
             type="text"
-            className="input input-bordered w-full max-w-xs text-xl"
+            className="input input-bordered w-full max-w-xs text-lg"
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
           />
@@ -70,11 +70,11 @@ const EditProfile = ({user}) => {
 
         <label className="form-control">
           <div className="label">
-            <span className="label-text ">Last Name</span>
+            <span className="label-text  text-lg">Last Name</span>
           </div>
           <input
             type="text"
-            className="input input-bordered w-full max-w-xs text-xl"
+            className="input input-bordered w-full max-w-xs text-lg"
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
           />
@@ -82,11 +82,11 @@ const EditProfile = ({user}) => {
 
         <label className="form-control">
           <div className="label">
-            <span className="label-text ">Age</span>
+            <span className="label-text text-lg">Age</span>
           </div>
           <input
             type="text"
-            className="input input-bordered w-full max-w-xs text-xl"
+            className="input input-bordered w-full max-w-xs text-lg"
             value={age}
             onChange={(e) => setAge(e.target.value)}
           />
@@ -94,11 +94,11 @@ const EditProfile = ({user}) => {
 
         <label className="form-control">
           <div className="label">
-            <span className="label-text ">Gender</span>
+            <span className="label-text text-lg">Gender</span>
           </div>
           <input
             type="text"
-            className="input input-bordered w-full max-w-xs text-xl"
+            className="input input-bordered w-full max-w-xs text-lg"
             value={gender}
             onChange={(e) => setGender(e.target.value)}
           />
@@ -106,11 +106,11 @@ const EditProfile = ({user}) => {
 
         <label className="form-control">
           <div className="label">
-            <span className="label-text ">Photo URL</span>
+            <span className="label-text text-lg">Photo URL</span>
           </div>
           <input
             type="text"
-            className="input input-bordered w-full max-w-xs text-xl"
+            className="input input-bordered w-full max-w-xs text-lg"
             value={photoUrl}
             onChange={(e) => setPhotoUrl(e.target.value)}
           />
@@ -118,14 +118,12 @@ const EditProfile = ({user}) => {
 
         <label className="form-control">
           <div className="label">
-            <span className="label-text ">About</span>
+            <span className="label-texttext-lg ">About</span>
           </div>
-          <input
-            type="text"
-            className="input input-bordered w-full max-w-xs "
-            value={about}
-            onChange={(e) => setAbout(e.target.value)}
-          />
+         
+          <textarea className="textarea textarea-bordered text-lg" placeholder="Bio" 
+          value={about}
+          onChange={(e) => setAbout(e.target.value)}></textarea>
         </label>
 
         <div className="card-actions flex justify-center mt-5">
