@@ -25,3 +25,5 @@
 - Navbar update on login from store
 - Add a constants file
 - Navigate to feed after login
+- Login , and security check to other routes
+
