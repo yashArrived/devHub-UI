@@ -9,6 +9,7 @@ const Login = () => {
 
         const[email , setEmailId] = useState("");
         const [password,setPassword] = useState("");
+        const [errorMsg , setErrorMsg] = useState("")
         const dispatch = useDispatch();
         const navigate = useNavigate();
 
@@ -25,6 +26,7 @@ try
     
 
     }catch(err){
+        setErrorMsg(err?.response?.data?.error || "Something went wrong")
         console.log(err);
         
     }
@@ -66,6 +68,7 @@ try
   </svg>
   <input type="password" className="grow" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
 </label>
+<p className='text-red-500'>{errorMsg}</p>
     <div className="card-actions justify-end">
       <button className="btn btn-primary" onClick={handleLogin}>Login</button>
       

@@ -1,11 +1,30 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom';
+import { BASE_URL } from '../utils/constants';
+import { removeUser } from '../utils/userSlice';
+import axios from 'axios';
 
 const Navbar = () => {
     const user = useSelector(store => store.user)
-    console.log(user);
+    // console.log(user);
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
     // const [photoUrl,setPhotoUrl] = useState(user.photoUrl  || "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" )
+
+const handleLogOut = async() =>{
+
+        try {
+             await axios.post(BASE_URL + "/logout" , {} , {
+                withCredentials:true
+            });
+            dispatch(removeUser());
+            return navigate("/login")
+        } catch (err) {
+            console.log(err);
+            
+        }
+}
 
   return (
     <div className="navbar bg-base-300 ">
@@ -32,7 +51,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li><a>Settings</a></li>
-          <li><a>Logout</a></li>
+          <li><Link onClick={handleLogOut}>Logout</Link></li>
         </ul>
       </div>
     </div>}
