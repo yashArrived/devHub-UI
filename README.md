@@ -22,3 +22,6 @@
 
 - Installed react-redux + @reduxjs/toolkit
 - ConfigureStore  , add provider , create slice write actions/reducers and then add reducer to store
+- Navbar update on login from store
+- Add a constants file
+- Navigate to feed after login
