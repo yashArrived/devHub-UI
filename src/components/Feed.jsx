@@ -31,7 +31,7 @@ console.log(feed);
 
   return (
   feed &&  <div className='flex items-center justify-center my-10'>
-      <UserCard user={feed} />
+      <UserCard user={feed[0]} />
     </div>
   )
 }

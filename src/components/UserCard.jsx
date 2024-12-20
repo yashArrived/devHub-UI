@@ -2,28 +2,30 @@ import React, { useState } from 'react'
 
 const UserCard = ({user}) => {
     // console.log(feed);
-    const [index , setIndex] = useState(0)
+    // const [index , setIndex] = useState(0)
     
-    const {firstName , lastName , skills, photoUrl,age,gender,about} = user[index];
+    // const {firstName , lastName , skills, photoUrl,age,gender,about} = user;
     // console.log(props);
-    const handleClick =()=>{
-        setIndex(index+1)
-    }
+    // const handleClick =()=>{
+    //     setIndex(index+1)
+    // }
   return (
- <div className="card bg-base-300 w-96 shadow-xl">
+ <div className="card bg-base-300 w-96 shadow-xl ">
   <figure className="px-10 pt-10">
     <img
-      src={photoUrl}
+      src={user.photoUrl}
       alt="User Picture"
       className="rounded-xl" />
   </figure>
   <div className="card-body items-center text-center">
-    <h2 className="card-title">{firstName + " " + lastName.charAt(0).toUpperCase() + lastName.slice(1)}</h2>
-    <p>{age && age + " " + gender && gender} </p>
-    <p>{about}</p>
+    <h2 className="card-title">{user.firstName + " " + user.lastName.charAt(0).toUpperCase() + user.lastName.slice(1)}</h2>
+    <p>{user.age && user.age + " " + user.gender && user.gender} </p>
+   
+    <p>{user.about}</p>
+    <br />
     <div className="card-actions flex">
-      <button className="btn btn-error " onClick={handleClick}>Ignore</button>
-      <button className="btn btn-primary" onClick={handleClick}>Interested</button>
+      <button className="btn btn-error " >Ignore</button>
+      <button className="btn btn-primary" >Interested</button>
     </div>
   </div>
 </div>
