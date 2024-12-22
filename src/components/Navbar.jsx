@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { BASE_URL } from '../utils/constants';
 import { removeUser } from '../utils/userSlice';
 import axios from 'axios';
+import Connections from './Connections';
 
 const Navbar = () => {
     const user = useSelector(store => store.user)
@@ -50,7 +51,7 @@ const handleLogOut = async() =>{
               {/* <span className="badge">New</span> */}
             </Link>
           </li>
-          <li><a>Settings</a></li>
+          <li><Link to="/Connections">Connections</Link></li>
           <li><Link onClick={handleLogOut}>Logout</Link></li>
         </ul>
       </div>
