@@ -31,3 +31,5 @@
 - Built user card
 - Edit profile feature built
 - Toast message on profile update
+
+- Created a Connections Page
