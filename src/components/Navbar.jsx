@@ -52,6 +52,7 @@ const handleLogOut = async() =>{
             </Link>
           </li>
           <li><Link to="/Connections">Connections</Link></li>
+          <li><Link to="/requests">Requests</Link></li>
           <li><Link onClick={handleLogOut}>Logout</Link></li>
         </ul>
       </div>
