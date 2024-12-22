@@ -33,3 +33,4 @@
 - Toast message on profile update
 
 - Created a Connections Page
+- Create new usable component showing connection cards
