@@ -6,7 +6,7 @@ import { addFeed } from '../utils/feedSlice';
 import UserCard from './UserCard';
 
 const Feed = () => {
-const dispatch = useDispatch()
+;const dispatch = useDispatch();
 const feed = useSelector((store) => store.feed);
 
 
@@ -27,7 +27,13 @@ const feed = useSelector((store) => store.feed);
   useEffect(()=>{
       getFeed()
   },[])
-console.log(feed);
+
+  if(!feed) return;
+  if(feed.length <= 0 ){
+    {return  (<div className='flex justify-center mt-10 text-center items-center'>
+      <h1 className='w-1/3 bg-base-300 p-5 rounded-md  hover:bg-base-200'>No new users found</h1>
+      </div>)}
+  }
 
   return (
   feed &&  <div className='flex items-center justify-center my-10'>
