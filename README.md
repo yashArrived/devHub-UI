@@ -34,3 +34,6 @@
 
 - Created a Connections Page
 - Create new usable component showing connection cards
+
+- Added in Feed page :  Send interested connection req , or ignore the user.
+
