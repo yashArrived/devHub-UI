@@ -18,7 +18,7 @@ const feed = useSelector((store) => store.feed);
     const allUsers = res.data.data;
     dispatch(addFeed(allUsers))}
     catch (error) {
-      console.log(err);
+      console.log(error);
       
     }
     

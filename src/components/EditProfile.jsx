@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState,  } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BASE_URL } from '../utils/constants';
 import axios from 'axios';
@@ -8,12 +8,12 @@ import UserCard from './UserCard';
 const EditProfile = ({user}) => {
   // const user = useSelector((store) => store.user);
 
-  const [firstName, setFirstName] = useState(user.firstName );
-  const [lastName, setLastName] = useState(user.lastName );
-  const [age, setAge] = useState(user.age );
-  const [photoUrl, setPhotoUrl] = useState(user.photoUrl);
-  const [gender, setGender] = useState(user.gender);
-  const [about, setAbout] = useState(user.about );
+  const [firstName, setFirstName] = useState(user.firstName  || "" );
+  const [lastName, setLastName] = useState(user.lastName || ""  );
+  const [age, setAge] = useState(user.age || "" );
+  const [photoUrl, setPhotoUrl] = useState(user.photoUrl || "" );
+  const [gender, setGender] = useState(user.gender || "" );
+  const [about, setAbout] = useState(user.about || ""  );
   const [errMsg, setErrMsg] = useState('');
   const [showToast , setShowtoast] = useState(false)
 
