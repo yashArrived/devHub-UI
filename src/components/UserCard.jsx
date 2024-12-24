@@ -5,14 +5,7 @@ import { removeUserFromFeed } from '../utils/feedSlice';
 import axios from 'axios';
 
 const UserCard = ({user}) => {
-    // console.log(feed);
-    // const [index , setIndex] = useState(0)
     
-    // const {firstName , lastName , skills, photoUrl,age,gender,about} = user;
-    // console.log(props);
-    // const handleClick =()=>{
-    //     setIndex(index+1)
-    // }
     const dispatch = useDispatch();
     const handleSendReq = async (status,toUserId)=> {
       try {
