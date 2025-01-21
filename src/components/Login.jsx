@@ -54,7 +54,7 @@ const handleSignup = async () =>{
 <div className="card bg-neutral text-neutral-content w-96 h-full">
   <div className="card-body items-center text-center ">
     <h2 className='card-title text-white'> {isLogin ? "Login" : "SignUp"}</h2>
-    {email}, {password}
+ 
 
 {/* firstname , lastName */}
  
