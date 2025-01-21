@@ -39,3 +39,5 @@
 - SignUp implemented
 - Litle change in backend api - on signup , we get the token and log in the user
 - E2E testing
+
+
