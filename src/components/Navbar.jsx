@@ -33,7 +33,7 @@ const handleLogOut = async() =>{
       <Link to="/" className="btn btn-ghost text-xl"> 👩‍💻 devHub</Link>
     </div>
     { user && <div className="flex-none gap-2">
-      <p>Welcome , {user.firstName.charAt(0).toUpperCase()+user.firstName.slice(1).toLowerCase()} </p>
+      <p>Welcome , {user?.firstName?.charAt(0).toUpperCase()+user?.firstName?.slice(1).toLowerCase()} </p>
       <div className="dropdown dropdown-end mx-4">
         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
           <div className="w-10 rounded-full">

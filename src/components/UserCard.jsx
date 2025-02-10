@@ -9,7 +9,7 @@ const UserCard = ({user}) => {
     const dispatch = useDispatch();
     const handleSendReq = async (status,toUserId)=> {
       try {
-        const res = await axios.post(BASE_URL + "/request/send/" +status + "/" + toUserId , {} , {withCredentials : true} )
+        const res = await axios.post(BASE_URL + "/request/send/" +status + "/" +toUserId , {} , {withCredentials : true} )
 
           dispatch(removeUserFromFeed(toUserId))
 

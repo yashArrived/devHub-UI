@@ -39,12 +39,16 @@ if(connections.length === 0 ) {return  (<div className='flex justify-center mt-1
       <h1 className="text-2xl font-bold">Connections</h1>
   
       {/* Flex container for all User cards */}
-      <div className=" flex justify-center gap-4 mt-4 items-center center ">
+      <div className=" flex justify-center gap-4 mt-4  items-center center ">
         {connections.map((connection, index) => (
           <div key={index} className="w-max">
             <User user={connection} />
+            {/* <div><button>sdbn</button></div> */}
           </div>
+          
         ))}
+
+     
       </div>
     </div>
     </div>

@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from "react-router-dom"
 
 const User = ({user}) => {
   return (
@@ -16,7 +17,11 @@ const User = ({user}) => {
       <p className='w-full'>{user.age && user.age + " " + user.gender && user.gender} </p>
      
       <p>{user.about}</p>
-      
+      <div>
+        <Link to={`/chat/${user._id}`}> 
+        <button className="bg-purple-500 text-white p-2 px-5 rounded-lg hover:bg-violet-600">Chat</button>
+        </Link>
+        </div>
       {/* <div className="card-actions flex">
         <button className="btn btn-error " >Ignore</button>
         <button className="btn btn-primary" >Interested</button>
