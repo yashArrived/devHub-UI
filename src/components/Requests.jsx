@@ -35,49 +35,47 @@ useEffect(()=>{
 },[])
 if(!requests) return;
 if(requests.length === 0 ) {
-  return  (<div className='flex justify-center mt-10 text-center items-center'>
-  <h1 className='w-1/3 bg-base-300 p-5 rounded-md  hover:bg-base-200'>You do not have any requests</h1>
-  </div>)
-}
-  return (
-    <>
-    <div className=' justify-center my-10 text-center'>
-        <h1 className='text-2xl text-bold '>Connection Requests</h1>
-      
-        
-        {requests.map((req,index)=>{
-            
-            return (<div className='flex  mt-5 m-3'>
-                 <div className="card bg-base-300 w-1/3 shadow-xl m-2 mx-4 hover:bg-base-200">
-        <div>
-    <figure className="px-8 pt-8">
-      <img
-        src={req.fromUserId.photoUrl}
-        alt="User Picture"
-        className="rounded-full h-32" />
-    </figure>
-    </div>
-    <div className="card-body items-center text-center">
-      <h2 className="card-title">{req.fromUserId.firstName + " " + req.fromUserId.lastName.charAt(0).toUpperCase() + req.fromUserId.lastName.slice(1)}</h2>
-      <p>{req.fromUserId.age && req.fromUserId.age + " " + req.fromUserId.gender && user.gender} </p>
-     
-      <p>{req.fromUserId.about}</p>
-      
-      <div className="card-actions flex">
-        <button className="btn btn-error " onClick={()=>reqReview("rejected" , req._id)} >Reject</button>
-        <button className="btn btn-primary" onClick={()=>reqReview("accepted" , req._id)}>Accept</button>
+  return  (
+    <div className='flex justify-center items-center text-center' style={{minHeight: 'calc(100vh - 200px)'}}>
+      <div className='bg-base-200 p-10 rounded-xl shadow-lg'>
+        <h2 className='text-3xl font-bold mb-2'>No Connection Requests</h2>
+        <p className='text-base-content opacity-60'>When someone sends you a request, it will appear here.</p>
       </div>
     </div>
-  </div>
-                
-            </div>)
+  )
+}
+  return (
+    <div className='container mx-auto p-4 md:p-8'>
+      <h1 className='text-3xl font-bold text-center mb-12'>Connection Requests</h1>
+      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
+        {requests.map((req)=>{
+            return (
+              <div key={req._id} className="card bg-base-300 shadow-2xl transition-transform transform hover:-translate-y-2 duration-300">
+                <figure className="px-10 pt-10">
+                  <div className="avatar">
+                    <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                      <img src={req.fromUserId.photoUrl} alt="User" />
+                    </div>
+                  </div>
+                </figure>
+                <div className="card-body items-center text-center">
+                  <h2 className="card-title">{req.fromUserId.firstName + " " + req.fromUserId.lastName.charAt(0).toUpperCase() + req.fromUserId.lastName.slice(1)}</h2>
+                  <p className="text-sm text-base-content/60">
+                    {req.fromUserId.age && `${req.fromUserId.age} years old`}
+                    {req.fromUserId.age && req.fromUserId.gender && ' · '}
+                    {req.fromUserId.gender}
+                  </p>
+                  <p className="my-4 text-base-content/80">{req.fromUserId.about}</p>
+                  <div className="card-actions">
+                    <button className="btn btn-error btn-outline" onClick={()=>reqReview("rejected" , req._id)} >Reject</button>
+                    <button className="btn btn-primary" onClick={()=>reqReview("accepted" , req._id)}>Accept</button>
+                  </div>
+                </div>
+              </div>
+            )
         })}
+      </div>
     </div>
-    <div>
-        
-        </div>
- 
-    </>
   )
 }
 

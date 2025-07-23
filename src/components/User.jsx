@@ -3,31 +3,29 @@ import {Link} from "react-router-dom"
 
 const User = ({user}) => {
   return (
-    <div className="card bg-base-300 w-[250px] h-5/6  shadow-xl m-2 mx-4 hover:bg-base-200 ">
-        <div>
-    <figure className="px-8 pt-8">
-      <img
-        src={user.photoUrl}
-        alt="User Picture"
-        className="rounded-full h-32 w-full" />
-    </figure>
-    </div>
-    <div className="flex-col card-body items-center text-center w-full">
-      <h2 className="card-title">{user.firstName + " " + user.lastName.charAt(0).toUpperCase() + user.lastName.slice(1)}</h2>
-      <p className='w-full'>{user.age && user.age + " " + user.gender && user.gender} </p>
-     
-      <p>{user.about}</p>
-      <div>
-        <Link to={`/chat/${user._id}`}> 
-        <button className="bg-purple-500 text-white p-2 px-5 rounded-lg hover:bg-violet-600">Chat</button>
-        </Link>
+    <div className="card bg-base-300 shadow-2xl transition-transform transform hover:-translate-y-2 duration-300">
+      <figure className="px-10 pt-10">
+        <div className="avatar">
+          <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+            <img src={user.photoUrl} alt="User" />
+          </div>
         </div>
-      {/* <div className="card-actions flex">
-        <button className="btn btn-error " >Ignore</button>
-        <button className="btn btn-primary" >Interested</button>
-      </div> */}
+      </figure>
+      <div className="card-body items-center text-center">
+        <h2 className="card-title">{user.firstName + " " + user.lastName.charAt(0).toUpperCase() + user.lastName.slice(1)}</h2>
+        <p className="text-sm text-base-content/60">
+          {user.age && `${user.age} years old`}
+          {user.age && user.gender && ' · '}
+          {user.gender}
+        </p>
+        <p className="my-4 text-base-content/80">{user.about}</p>
+        <div className="card-actions">
+          <Link to={`/chat/${user._id}`}>
+            <button className="btn btn-primary">Chat</button>
+          </Link>
+        </div>
+      </div>
     </div>
-  </div>
   )
 }
 

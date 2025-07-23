@@ -29,32 +29,30 @@ useEffect(()=>{
 fetchConnections()
 },[])
 if(!connections) return;
-if(connections.length === 0 ) {return  (<div className='flex justify-center mt-10 text-center items-center'>
-    <h1 className='w-1/3 bg-base-300 p-5 rounded-md  hover:bg-base-200'>You do not have any connection. Don't be an introvert, Make some connections right away :  <Link to="/" className='link text-cyan-300'>Explore?</Link></h1>
-    </div>)}
-  return (
-    <>
-    <div className='flex items-center justify-center'>
-    <div className=" flex-col items-center justify-center my-10 text-center  object-contain w-full ">
-      <h1 className="text-2xl font-bold">Connections</h1>
-  
-      {/* Flex container for all User cards */}
-      <div className=" flex justify-center gap-4 mt-4  items-center center ">
-        {connections.map((connection, index) => (
-          <div key={index} className="w-max">
-            <User user={connection} />
-            {/* <div><button>sdbn</button></div> */}
-          </div>
-          
-        ))}
-
-     
+if(connections.length === 0 ) {
+  return  (
+    <div className='flex justify-center items-center text-center' style={{minHeight: 'calc(100vh - 200px)'}}>
+      <div className='bg-base-200 p-10 rounded-xl shadow-lg'>
+        <h2 className='text-3xl font-bold mb-2'>No Connections Yet</h2>
+        <p className='text-base-content opacity-60'>
+          Don't be an introvert! Make some connections right away: 
+          <Link to="/" className='link text-cyan-300 ml-2'>Explore</Link>
+        </p>
       </div>
     </div>
+  )
+}
+  return (
+    <div className='container mx-auto p-4 md:p-8'>
+      <h1 className='text-3xl font-bold text-center mb-12'>Your Connections</h1>
+      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
+        {connections.map((connection) => (
+          <div key={connection._id}>
+            <User user={connection} />
+          </div>
+        ))}
+      </div>
     </div>
-  </>
-  
-  
   )
 }
 
