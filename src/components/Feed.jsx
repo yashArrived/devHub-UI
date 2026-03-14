@@ -31,11 +31,11 @@ const Feed = () => {
 
   if (feed.length <= 0) {
     return (
-      <div className="relative flex justify-center items-center h-screen bg-gray-900 overflow-hidden">
+      <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-base-200">
         <AnimatedBackground />
-        <div className="text-center p-8 bg-gray-800 bg-opacity-80 rounded-lg shadow-xl border border-gray-700 z-10">
-          <h1 className="text-3xl font-bold text-green-400 mb-4">No new developers found</h1>
-          {/* <p className="text-gray-400">Expand your search criteria or check back later</p> */}
+        <div className="z-10 mx-4 max-w-xl rounded-3xl border border-base-300/70 bg-base-100/80 p-10 text-center shadow-2xl backdrop-blur-xl">
+          <h1 className="mb-3 text-3xl font-bold text-primary">No new developers found</h1>
+          <p className="text-base-content/70">You are all caught up for now. Check back in a while.</p>
         </div>
       </div>
     );
@@ -44,17 +44,17 @@ const Feed = () => {
   return (
     feed && (
       <div className=''>
-      <div className="relative  align-middle m-auto min-h-screen bg-gray-900 py-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <div className="relative m-auto min-h-screen overflow-hidden bg-base-200 py-12 px-4 sm:px-6 lg:px-8">
         <AnimatedBackground />
-        <div className="max-w-3xl mx-auto relative z-10">
-          <h1 className="text-4xl font-bold text-center mb-8 text-gray-100">
+        <div className="relative z-10 mx-auto max-w-3xl">
+          <h1 className="mb-2 text-center text-4xl font-bold text-base-content md:text-5xl">
             Connect with Fellow Developers
           </h1>
+          <p className="mb-8 text-center text-base-content/70">Discover talented developers and grow your network.</p>
           <div className='flex'>
-          <div className="bg-gray-800 bg-opacity-80 rounded-lg shadow-xl p-6 border flex:col justify-center items-center m-auto  border-gray-700">
-            <div className="text-gray-400 mb-6 text-center">
-              <p className="text-lg">Discover talented developers</p>
-              {/* <p className="text-sm mt-2">Swipe right to connect, left to pass</p> */}
+          <div className="m-auto rounded-3xl border border-base-300/70 bg-base-100/80 p-6 shadow-2xl backdrop-blur-xl">
+            <div className="mb-6 text-center text-base-content/70">
+              <p className="text-lg font-medium">Swipe less, connect smarter</p>
             </div>
             <UserCard user={feed[0]} />
           </div>
