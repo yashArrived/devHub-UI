@@ -19,7 +19,7 @@ const userData = useSelector((store)=>store.user)
 
           dispatch(addUser(res.data))
       }catch(err){
-     if(err.status == 401){navigate("/login")}
+     if(err?.response?.status === 401){navigate("/login")}
   console.log(err);
   
 }

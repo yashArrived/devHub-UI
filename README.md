@@ -1,5 +1,11 @@
 # devHub-UI
 
+## Deployment
+
+- Frontend API base URL is controlled by `VITE_API_BASE_URL`.
+- If `VITE_API_BASE_URL` is not set, the app defaults to `https://dev-hub-lyart.vercel.app`.
+- For Vercel frontend deploys, add `VITE_API_BASE_URL=https://dev-hub-lyart.vercel.app` in the project environment variables.
+
  - Created a Vite + React project
  - Installing Tailwind CSS
  - Installing DaisyUI
